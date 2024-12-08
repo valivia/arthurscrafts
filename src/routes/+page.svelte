@@ -51,7 +51,7 @@
         font-size: 2rem;
 
         background: linear-gradient(0deg, $color, $color),
-            url("/assets/header.jpg");
+            url("/assets/header.webp");
         background-size: cover;
         background-position: center;
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { env } from "$env/dynamic/public";
+    import { PUBLIC_EMAIL } from "$env/static/public";
     import EmailIcon from "virtual:icons/carbon/email";
 </script>
 
@@ -7,9 +7,9 @@
     <section>
         <h4>Contact</h4>
 
-        {#if env.PUBLIC_EMAIL}
+        {#if PUBLIC_EMAIL}
             <a
-                href="mailto:  {env.PUBLIC_EMAIL}?subject =F contact"
+                href="mailto:  {PUBLIC_EMAIL}?subject =F contact"
                 target="_blank"
             >
                 Email
