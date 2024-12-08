@@ -12,6 +12,12 @@ const config = {
         adapter: adapter({
             fallback: '404.html'
         }),
+        alias: {
+            "lib": "./src/lib",
+            "styles": "./src/styles",
+            "routes": "./src/routes",
+            "components": "./src/components",
+        }
     },
 
     extensions: [".svelte", ".svx"]
