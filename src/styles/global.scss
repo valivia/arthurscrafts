@@ -18,7 +18,7 @@ $font: "space_grotesk", Helvetica, sans-serif;
     --theme-text: #bfbfbf;
     --theme-text-dark: #a1a1a1;
 
-    --theme-accent: #bf8d50;
+    --theme-accent: #be756d;
     --theme-danger: #b63c3c;
     --theme-warning: var(--theme-accent);
     --theme-success: var(--theme-accent);
@@ -75,6 +75,14 @@ $font: "space_grotesk", Helvetica, sans-serif;
 :global(a) {
     color: inherit;
     text-decoration: none;
+}
+
+:global(p > a) {
+    color: var(--theme-accent);
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 :global(::-webkit-scrollbar) {

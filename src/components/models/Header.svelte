@@ -23,12 +23,13 @@
 
         height: 30vh;
         height: 30dvh;
+        padding-top: 10vh;
 
         font-size: 2rem;
 
         text-align: center;
 
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
 
         :global(h1) {
             font-weight: 100;

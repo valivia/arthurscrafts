@@ -12,11 +12,14 @@
         stroke-miterlimit: 10;
         stroke-width: 2px;
         stroke-dasharray: 1000;
-        stroke-dashoffset: 1000;
+        stroke-dashoffset: 0;
         animation: dash 5s linear forwards;
       }
 
       @keyframes dash {
+        from {
+          stroke-dashoffset: 1000;
+        }
         to {
           stroke-dashoffset: 0;
         }

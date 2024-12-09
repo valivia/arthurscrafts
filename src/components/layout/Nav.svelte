@@ -65,7 +65,7 @@
         align-items: center;
 
         // Font
-        font-size: Clamp(1rem, 2vw, 1.4rem);
+        font-size: Clamp(1rem, 2vw, 1.3rem);
 
         font-weight: 300;
         text-align: center;
@@ -105,6 +105,10 @@
             color: var(--theme-accent);
         }
     }
+
+    a:hover {
+            color: var(--theme-accent);
+        }
 
     .logo {
         :global(svg) {

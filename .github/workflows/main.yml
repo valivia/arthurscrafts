@@ -23,6 +23,8 @@ jobs:
         run: npm run build
         env:
           PUBLIC_EMAIL: ${{ vars.PUBLIC_EMAIL }}
+          PUBLIC_INSTAGRAM: ${{ vars.PUBLIC_INSTAGRAM }}
+          PUBLIC_ETSY: ${{ vars.PUBLIC_ETSY }}
 
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3

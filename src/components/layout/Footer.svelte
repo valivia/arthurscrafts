@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { PUBLIC_EMAIL } from "$env/static/public";
+    import { PUBLIC_EMAIL, PUBLIC_INSTAGRAM } from "$env/static/public";
     import EmailIcon from "virtual:icons/carbon/email";
 </script>
 
@@ -8,13 +8,27 @@
         <h4>Contact</h4>
 
         {#if PUBLIC_EMAIL}
-            <a
-                href="mailto:  {PUBLIC_EMAIL}?subject =F contact"
-                target="_blank"
-            >
-                Email
-                <EmailIcon width="1.5em" height="1.5em" />
-            </a>
+            <span>
+                Email:
+                <a
+                    href="mailto:  {PUBLIC_EMAIL}?subject =F contact"
+                    target="_blank"
+                >
+                    {PUBLIC_EMAIL}
+                </a>
+            </span>
+        {/if}
+
+        {#if PUBLIC_INSTAGRAM}
+            <span>
+                Instagram:
+                <a
+                    href="https://www.instagram.com/{PUBLIC_INSTAGRAM}"
+                    target="_blank"
+                >
+                    @{PUBLIC_INSTAGRAM}
+                </a>
+            </span>
         {/if}
     </section>
     <div class="detail">
@@ -42,16 +56,21 @@
             flex-direction: column;
             gap: 0.5em;
 
-            a {
+            span {
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 0.5rem;
 
-                &:hover {
-                    color: var(--theme-accent);
-                }
+                opacity: 0.8;
+                font-size: 0.9em;
             }
+        }
+    }
+
+    a {
+        &:hover {
+            color: var(--theme-accent);
         }
     }
 
