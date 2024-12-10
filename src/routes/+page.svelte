@@ -16,7 +16,6 @@
     <h1>Arthur's Crafts</h1>
     <p>Inspired by history</p>
 
-    <!-- <Chevron direction="down" size="1em" /> -->
     <Socials />
 </header>
 

@@ -79,9 +79,10 @@ $font: "space_grotesk", Helvetica, sans-serif;
 
 :global(p > a) {
     color: var(--theme-accent);
+    text-decoration: underline;
 
     &:hover {
-        text-decoration: underline;
+        color: color-mix(in oklab, var(--theme-accent) 60%, white);
     }
 }
 

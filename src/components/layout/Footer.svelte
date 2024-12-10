@@ -5,7 +5,7 @@
 
 <footer>
     <section>
-        <h4>Contact</h4>
+        <h2>Contact</h2>
 
         {#if PUBLIC_EMAIL}
             <span>
@@ -13,6 +13,7 @@
                 <a
                     href="mailto:  {PUBLIC_EMAIL}?subject =F contact"
                     target="_blank"
+                    aria-label="Email"
                 >
                     {PUBLIC_EMAIL}
                 </a>
@@ -25,6 +26,7 @@
                 <a
                     href="https://www.instagram.com/{PUBLIC_INSTAGRAM}"
                     target="_blank"
+                    aria-label="Instagram profile"
                 >
                     @{PUBLIC_INSTAGRAM}
                 </a>
@@ -56,6 +58,12 @@
             flex-direction: column;
             gap: 0.5em;
 
+            h2 {
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+                font-weight: 300;
+            }
+
             span {
                 display: flex;
                 align-items: center;
@@ -69,6 +77,7 @@
     }
 
     a {
+        text-decoration: underline;
         &:hover {
             color: var(--theme-accent);
         }

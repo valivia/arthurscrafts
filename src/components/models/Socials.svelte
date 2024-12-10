@@ -10,13 +10,23 @@
 </script>
 
 <section>
-    <a target="_blank" href="https://www.etsy.com/shop/{PUBLIC_ETSY}">
+    <a
+        target="_blank"
+        href="https://www.etsy.com/shop/{PUBLIC_ETSY}"
+        aria-label="Shop"
+    >
         <ShoppingCart />
     </a>
-    <a target="_blank" href="https://www.instagram.com/{PUBLIC_INSTAGRAM}">
+    <a
+        target="_blank"
+        href="https://www.instagram.com/{PUBLIC_INSTAGRAM}"
+        aria-label="Instagram profile"
+    >
         <LogoInstagram />
     </a>
-    <a target="_blank" href="mailto: {PUBLIC_EMAIL}"><EmailIcon /></a>
+    <a target="_blank" href="mailto: {PUBLIC_EMAIL}" aria-label="Email">
+        <EmailIcon />
+    </a>
 </section>
 
 <style lang="scss">
