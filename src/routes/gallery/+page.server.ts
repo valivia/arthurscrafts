@@ -1,13 +1,8 @@
-import type { Image, ImageData } from "lib/Image";
+import type { Category, categoryConfig, Image } from "lib/Image";
 import type { PageServerLoad } from "./$types";
 import { readdir } from "fs/promises";
 import { readFile } from "fs/promises";
 import sizeOf from "image-size";
-
-interface Category {
-    name: string;
-    images: Image[];
-}
 
 export const load = (async () => {
     try {
@@ -22,9 +17,9 @@ export const load = (async () => {
                     const files = await readdir(folderPath, { withFileTypes: true });
 
                     // Load metadata
-                    let metadata: ImageData[] | null = null;
+                    let metadata: categoryConfig | null = null;
                     try {
-                        const metadataFile = await readFile(`${folderPath}/metadata.json`, "utf-8");
+                        const metadataFile = await readFile(`${folderPath}/index.json`, "utf-8");
                         metadata = JSON.parse(metadataFile);
                     } catch (error) {
                         console.warn(`Failed to load metadata for folder ${folder.name}:`, error);
@@ -50,17 +45,21 @@ export const load = (async () => {
                                     name: file.name,
                                     width: dimensions.width,
                                     height: dimensions.height,
-                                    data: metadata?.find((data) => data.name === file.name),
+                                    data: metadata?.images.find((data) => data.fileName === file.name),
                                 }
                             })
                     )).filter((image) => image !== null)
 
                     return {
-                        name: folder.name,
+                        path: folder.name,
+                        title: metadata?.title ?? folder.name,
+                        priority: metadata?.priority ?? 0,
                         images,
                     };
                 })
-        );
+        )
+
+        categories.sort((a, b) => a.priority - b.priority);
 
 
         console.log(JSON.stringify(categories, null, 2));

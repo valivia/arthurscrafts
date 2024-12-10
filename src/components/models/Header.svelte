@@ -38,6 +38,7 @@
 
         :global(p) {
             font-size: 0.5em;
+            opacity: 0.8;
         }
     }
 </style>

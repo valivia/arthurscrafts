@@ -7,7 +7,21 @@ export interface Image {
 }
 
 export interface ImageData {
-    name: string;
+    fileName: string;
     title: string;
     description: string;
+}
+
+interface baseCategory {
+    title: string;
+    priority: number;
+}
+
+export interface categoryConfig extends baseCategory {
+    images: ImageData[];
+}
+
+export interface Category extends baseCategory {
+    path: string;
+    images: Image[];
 }

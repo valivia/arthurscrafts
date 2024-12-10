@@ -11,7 +11,7 @@
         if (currentCategory === null)
             return categories.flatMap((category) => category.images);
         return (
-            categories.find((category) => category.name === currentCategory)
+            categories.find((category) => category.title === currentCategory)
                 ?.images ?? []
         );
     });
@@ -23,6 +23,7 @@
 
 <Header>
     <h1>Gallery</h1>
+    <p>A collection of past work</p>
 </Header>
 
 <main>
@@ -35,10 +36,10 @@
         </button>
         {#each categories as category}
             <button
-                onclick={() => (currentCategory = category.name)}
-                class:active={currentCategory === category.name}
+                onclick={() => (currentCategory = category.title)}
+                class:active={currentCategory === category.title}
             >
-                {category.name}
+                {category.title}
             </button>
         {/each}
     </nav>
@@ -66,7 +67,7 @@
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
 
         & .active {
             color: var(--theme-accent);
@@ -78,11 +79,7 @@
             padding-block: 0.8rem 0.2rem;
             border: none;
             border-radius: 0;
-            background-color: var(--color-primary);
-            cursor: pointer;
-            transition: background-color 0.2s;
-
-            text-transform: capitalize;
+            font-size: clamp(1rem, 5vw, 1.2rem);
 
             &:hover {
                 background-color: var(--color-primary-dark);
