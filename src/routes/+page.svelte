@@ -38,11 +38,11 @@
             Take a look at my gallery to see some of my past pieces, and my
             workshops page to see my upcoming courses. I do accept commissions
             via my
-            <a href="mailto: {PUBLIC_EMAIL}?subject =F contact" target="_blank">
+            <a href="mailto: {PUBLIC_EMAIL}?subject =F contact" target="_blank" aria-label="Email">
                 email.
             </a>
             I also have an
-            <a href="https://www.etsy.com/shop/{PUBLIC_ETSY}">Etsy</a> store where
+            <a href="https://www.etsy.com/shop/{PUBLIC_ETSY}" aria-label="Shop">Etsy</a> store where
             you can browse items I have in stock.
         </p>
     </section>
