@@ -5,7 +5,11 @@
 
 {#snippet Link(name: string, url: string)}
     <li class="button">
-        <a href={url} aria-current={$page.url.pathname === url} data-sveltekit-keepfocus>{name}</a>
+        <a
+            href={url}
+            aria-current={$page.url.pathname === url}
+            data-sveltekit-keepfocus>{name}</a
+        >
     </li>
 {/snippet}
 
@@ -14,7 +18,12 @@
         {@render Link("Workshops", "/workshops")}
 
         <li class="logo">
-            <a href={"/"} aria-label="Home" aria-current={$page.url.pathname === "/"} data-sveltekit-keepfocus>
+            <a
+                href={"/"}
+                aria-label="Home"
+                aria-current={$page.url.pathname === "/"}
+                data-sveltekit-keepfocus
+            >
                 <Logo />
             </a>
         </li>
@@ -42,7 +51,12 @@
         z-index: var(--z-nav);
         top: 0;
 
-        background: linear-gradient(to bottom, rgba(black, 1) 0%, rgba(black, 1) 1%, rgba(black, 0) 100%);
+        background: linear-gradient(
+            to bottom,
+            rgba(black, 1) 0%,
+            rgba(black, 1) 1%,
+            rgba(black, 0) 100%
+        );
     }
 
     .list {
@@ -65,7 +79,7 @@
         align-items: center;
 
         // Font
-        font-size: Clamp(1rem, 2vw, 1.3rem);
+        font-size: Clamp(0.85rem, 2vw, 1.3rem);
 
         font-weight: 300;
         text-align: center;
@@ -107,8 +121,8 @@
     }
 
     a:hover {
-            color: var(--theme-accent);
-        }
+        color: var(--theme-accent);
+    }
 
     .logo {
         :global(svg) {
