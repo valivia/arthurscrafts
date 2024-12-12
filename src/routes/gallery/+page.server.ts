@@ -61,9 +61,6 @@ export const load = (async () => {
 
         categories.sort((a, b) => a.priority - b.priority);
 
-
-        console.log(JSON.stringify(categories, null, 2));
-
         return {
             categories,
         };

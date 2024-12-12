@@ -10,7 +10,7 @@
 <Footer />
 
 <svelte:head>
-    <meta name="theme-color" content="#bf8d50" />
+    <meta name="theme-color" content="#cc5447" />
 </svelte:head>
 
 <style lang="scss" global>
