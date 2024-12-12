@@ -1,6 +1,5 @@
 <script lang="ts">
     import { PUBLIC_EMAIL, PUBLIC_INSTAGRAM } from "$env/static/public";
-    import EmailIcon from "virtual:icons/carbon/email";
 </script>
 
 <footer>

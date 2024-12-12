@@ -1,16 +1,7 @@
 <script>
     import { PUBLIC_EMAIL, PUBLIC_ETSY } from "$env/static/public";
-    import Chevron from "components/icons/Chevron.svelte";
     import Socials from "components/models/Socials.svelte";
 </script>
-
-<svelte:head>
-    <title>Arthur's Crafts</title>
-    <meta
-        name="description"
-        content="Somerset based craftsman and traditional skills enthusiast working predominantly with hand tools to produce hand crafted, historically inspired pieces from many different materials, ranging from wood, steel, copper alloys and silver, to leather, horn and bone."
-    />
-</svelte:head>
 
 <header>
     <h1>Arthur's Crafts</h1>
@@ -38,12 +29,17 @@
             Take a look at my gallery to see some of my past pieces, and my
             workshops page to see my upcoming courses. I do accept commissions
             via my
-            <a href="mailto: {PUBLIC_EMAIL}?subject =F contact" target="_blank" aria-label="Email">
+            <a
+                href="mailto: {PUBLIC_EMAIL}?subject =F contact"
+                target="_blank"
+                aria-label="Email"
+            >
                 email.
             </a>
             I also have an
-            <a href="https://www.etsy.com/shop/{PUBLIC_ETSY}" aria-label="Shop">Etsy</a> store where
-            you can browse items I have in stock.
+            <a href="https://www.etsy.com/shop/{PUBLIC_ETSY}" aria-label="Shop"
+                >Etsy</a
+            > store where you can browse items I have in stock.
         </p>
     </section>
 </main>
