@@ -28,16 +28,6 @@ $font: "space_grotesk", Helvetica, sans-serif;
     --theme-secondary: #171717;
     --theme-tertiary: #000000;
 
-    // tags
-    --tag-green: hsl(128, 17%, 51%);
-    --tag-yellow: hsl(50, 35%, 58%);
-    --tag-orange: hsl(36, 35%, 56%);
-    --tag-red: hsl(0, 25%, 57%);
-    --tag-blue: hsl(203, 22%, 62%);
-    --tag-purple: hsl(270, 25%, 57%);
-    --tag-pink: hsl(330, 25%, 57%);
-    --tag-cyan: hsl(180, 25%, 57%);
-
     // TODO: implement themes?
     @media (prefers-color-scheme: dark) {
     }

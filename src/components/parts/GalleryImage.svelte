@@ -4,12 +4,14 @@
     interface Props {
         image: Image;
         sizeMultiplier?: number;
+        onclick?: () => void;
     }
 
-    let { image, sizeMultiplier = 1 }: Props = $props();
+    let { image, sizeMultiplier = 1, onclick }: Props = $props();
 </script>
 
-<div
+<button
+    {onclick}
     style="width:{(image.width * (sizeMultiplier * 200)) /
         image.height}px;flex-grow:{(image.width * (sizeMultiplier * 200)) /
         image.height}"
@@ -19,17 +21,22 @@
     <picture>
         <img src={image.path} alt={image.name} />
     </picture>
-</div>
+</button>
 
 <style lang="scss">
     @use "styles/parts/utils" as *;
 
-    div {
+    button {
+        all: unset;
         margin: 4px;
         position: relative;
         overflow: hidden;
         @include boxShadow;
         border-radius: var(--border-radius);
+
+        &:hover {
+            outline: 2px solid var(--theme-accent);
+        }
 
         :global(picture) {
             position: absolute;
