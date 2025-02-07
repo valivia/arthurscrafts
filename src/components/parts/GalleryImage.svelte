@@ -28,6 +28,7 @@
 
     button {
         all: unset;
+        cursor: pointer;
         margin: 4px;
         position: relative;
         overflow: hidden;
