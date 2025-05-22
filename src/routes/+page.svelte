@@ -1,5 +1,5 @@
 <script>
-    import { PUBLIC_EMAIL, PUBLIC_ETSY } from "$env/static/public";
+    import { PUBLIC_EMAIL } from "$env/static/public";
     import Socials from "components/models/Socials.svelte";
 </script>
 
@@ -36,10 +36,6 @@
             >
                 email.
             </a>
-            I also have an
-            <a href="https://www.etsy.com/shop/{PUBLIC_ETSY}" aria-label="Shop"
-                >Etsy</a
-            > store where you can browse items I have in stock.
         </p>
     </section>
 </main>
