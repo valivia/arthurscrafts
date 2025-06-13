@@ -1,6 +1,6 @@
 import type { Category, categoryConfig, Image } from "lib/Image";
 import type { PageServerLoad } from "./$types";
-import { readdir } from "fs/promises";
+import { readdir, stat } from "fs/promises";
 import { readFile } from "fs/promises";
 import sizeOf from "image-size";
 
@@ -25,15 +25,16 @@ export const load = (async () => {
                         console.warn(`Failed to load metadata for folder ${folder.name}:`, error);
                     }
 
-
-
                     // Gather image files
                     const images: Image[] = (await Promise.all(
                         files
                             .filter((file) => file.isFile() && /\.(png|jpe?g|webp|gif)$/i.test(file.name))
                             .map(async (file) => {
-                                const image = await readFile(`${folderPath}/${file.name}`);
+                                const imagePath = `${folderPath}/${file.name}`;
+                                const image = await readFile(imagePath);
                                 const dimensions = sizeOf(image);
+                                const fileStat = await stat(imagePath);
+
 
                                 if (dimensions.height === undefined || dimensions.width === undefined) {
                                     console.warn(`Failed to get dimensions for image ${file.name}`);
@@ -43,12 +44,18 @@ export const load = (async () => {
                                 return {
                                     path: `images/${folder.name}/${file.name}`,
                                     name: file.name,
+                                    lastModified: fileStat.birthtimeMs,
                                     width: dimensions.width,
                                     height: dimensions.height,
                                     data: metadata?.images.find((data) => data.fileName === file.name),
                                 }
                             })
                     )).filter((image) => image !== null)
+                        .sort((a, b) => {
+                            if (!a || !b) return 0;
+                            return b.lastModified - a.lastModified;
+                        }
+                        );
 
                     return {
                         path: folder.name,
