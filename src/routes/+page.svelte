@@ -26,7 +26,7 @@
         </p>
 
         <p>
-            Take a look at my gallery to see some of my past pieces, and my
+            Take a look at my <a href="/gallery"> gallery </a>  to see some of my past pieces, and my
             workshops page to see my upcoming courses. I do accept commissions
             via my
             <a
