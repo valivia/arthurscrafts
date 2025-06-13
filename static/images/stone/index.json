@@ -1,5 +1,14 @@
 {
-    "title": "Stone",
-    "priority": 4,
-    "images": []
+  "title": "Stone",
+  "priority": 4,
+  "images": [
+    {
+      "fileName": "phyllite stone.webp",
+      "createdAtMs": 1743975001599
+    },
+    {
+      "fileName": "wet whetstones.webp",
+      "createdAtMs": 1734036822676
+    }
+  ]
 }

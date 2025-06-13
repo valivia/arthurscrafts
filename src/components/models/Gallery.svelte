@@ -1,7 +1,7 @@
 <script lang="ts">
     import GalleryImage from "components/parts/GalleryImage.svelte";
     import { IChevronLeft, IChevronRight } from "lib/icons";
-    import type { Image } from "lib/Image";
+    import { getImageUrl, type Image } from "lib/Image";
     import { fly } from "svelte/transition";
 
     interface Props {
@@ -41,8 +41,8 @@
                 <picture>
                     <img
                         class="image shadow"
-                        src={currentImage.path}
-                        alt={currentImage.name}
+                        src={getImageUrl(currentImage)}
+                        alt={currentImage.altText}
                         in:fly={{
                             x: direction > 0 ? 200 : -200,
                             duration: 200,

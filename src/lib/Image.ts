@@ -1,15 +1,18 @@
-export interface Image {
-    path: string;
-    name: string;
+export interface Image extends ImageMetaData {
+    category: string;
+
     width: number;
     height: number;
-    data?: ImageData;
 }
 
-export interface ImageData {
+export interface ImageMetaData {
     fileName: string;
-    title: string;
-    description: string;
+
+    title?: string;
+    description?: string;
+    altText?: string;
+
+    createdAtMs: number;
 }
 
 interface baseCategory {
@@ -18,10 +21,14 @@ interface baseCategory {
 }
 
 export interface categoryConfig extends baseCategory {
-    images: ImageData[];
+    images: ImageMetaData[];
 }
 
 export interface Category extends baseCategory {
     path: string;
     images: Image[];
+}
+
+export function getImageUrl(image: Image): string {
+    return `/images/${image.category}/${image.fileName}`;
 }
