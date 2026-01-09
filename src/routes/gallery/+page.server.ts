@@ -4,16 +4,17 @@ import { readdir, stat, writeFile } from "fs/promises";
 import { readFile } from "fs/promises";
 import sizeOf from "image-size";
 
+const ROOT = "static/images"
 export const load = (async () => {
     try {
-        const folders = await readdir("static/images", { withFileTypes: true });
+        const folders = await readdir(ROOT, { withFileTypes: true });
 
         // Process folders into categories
         const categories: Category[] = await Promise.all(
             folders
                 .filter((folder) => folder.isDirectory()) // Only process directories
                 .map(async (folder) => {
-                    const folderPath = `static/images/${folder.name}`;
+                    const folderPath = `${ROOT}/${folder.name}`;
                     const files = await readdir(folderPath, { withFileTypes: true });
 
                     // Load metadata

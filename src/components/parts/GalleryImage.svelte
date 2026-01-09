@@ -12,6 +12,7 @@
 
 <button
     {onclick}
+    aria-label="View image"
     style="width:{(image.width * (sizeMultiplier * 200)) /
         image.height}px;flex-grow:{(image.width * (sizeMultiplier * 200)) /
         image.height}"
